@@ -36,8 +36,6 @@ steps:
         "standupcodeservices",
       ]
 
-  
-
 substitutions:
   _NAMESPACE: standswork
 timeout: 1800s
