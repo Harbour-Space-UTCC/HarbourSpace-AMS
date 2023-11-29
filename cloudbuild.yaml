@@ -1,0 +1,48 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/standupcodeservices/hs-utcc-asm:${BUILD_ID}",
+        "-t",
+        "gcr.io/standupcodeservices/hs-utcc-asm:latest",
+
+        ".",
+      ]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/standupcodeservices/hs-utcc-asm:${BUILD_ID}"]
+
+  # Tag image with latest
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/standupcodeservices/hs-utcc-asm:latest"]
+
+  # Deploy to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    args:
+      [
+        "run",
+        "deploy",
+        "hs-utcc-asm",
+        "--image",
+        "gcr.io/standupcodeservices/hs-utcc-asm:${BUILD_ID}",
+        "--region",
+        "asia-southeast1",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+        "--project",
+        "standupcodeservices",
+      ]
+
+  
+
+substitutions:
+  _NAMESPACE: standswork
+timeout: 1800s
+
+# see more type https://cloud.google.com/build/pricing
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: "E2_HIGHCPU_8"
