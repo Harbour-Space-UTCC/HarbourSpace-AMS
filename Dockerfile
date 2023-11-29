@@ -55,4 +55,6 @@ COPY --from=build /myapp/start.sh /myapp/start.sh
 
 # ENTRYPOINT [ "./start.sh" ]
 
+EXPOSE 3000
+
 CMD ["npm", "run", "start"]
