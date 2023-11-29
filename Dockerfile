@@ -53,4 +53,6 @@ COPY --from=build /myapp/public /myapp/public
 COPY --from=build /myapp/package.json /myapp/package.json
 COPY --from=build /myapp/start.sh /myapp/start.sh
 
-ENTRYPOINT [ "./start.sh" ]
+# ENTRYPOINT [ "./start.sh" ]
+
+CMD ["npm", "run", "start"]
