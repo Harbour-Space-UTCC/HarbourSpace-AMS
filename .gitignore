@@ -1,0 +1,32 @@
+node_modules
+
+/build
+/public/build
+.env
+.env.production
+.cache
+
+/prisma/data.db
+/prisma/data.db-journal
+
+
+/coverage
+
+# Supabase
+**/supabase/.branches
+**/supabase/.temp
+**/supabase/.env
+
+# OS
+.DS_Store
+test-results/
+
+/playwright-report/
+/playwright/.cache/
+/playwright-report/*
+desktop-app/shelf-installer
+desktop-app/portable
+
+.npmrc
+
+.vscode
