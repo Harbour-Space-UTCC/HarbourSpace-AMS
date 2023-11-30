@@ -55,8 +55,7 @@ export default function App() {
             target="_blank"
             className="relative z-20 w-[150px] text-right text-sm text-white no-underline hover:text-white"
           >
-            Harbour.Space University <br />
-            @UTCC
+            Harbour.Space University @UTCC
           </a>
           <img
             className="absolute inset-0 h-full w-full max-w-none object-cover"

@@ -198,7 +198,7 @@ export default function Onboarding() {
         <div>
           <Input
             label="Username"
-            addOn="shelf.nu/"
+            addOn="asm-hs.standswork.com/"
             type="text"
             name={zo.fields.username()}
             error={

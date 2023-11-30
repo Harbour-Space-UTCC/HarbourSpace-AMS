@@ -99,7 +99,7 @@ export default function Sidebar() {
                 className="mx-1.5 inline h-[32px]"
               />
               <span className="logo-text transition duration-200 ease-linear">
-                <h1>Harbour.Space@UTCC | AMS</h1>
+                <h1 className="text-xs">Harbour.Space@UTCC</h1>
               </span>
             </Link>
           </div>

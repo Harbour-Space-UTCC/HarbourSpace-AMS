@@ -226,7 +226,7 @@ export default function UserPage() {
           <Input
             label="Username"
             hideLabel={true}
-            addOn="shelf.nu/"
+            addOn="asm-hs.standswork.com/"
             type="text"
             name={zo.fields.username()}
             defaultValue={user?.username || undefined}
